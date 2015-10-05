@@ -37,7 +37,7 @@
 	}
 
 		#banner br {
-			display: none;
+			line-height: 1.0;
 		}
 
 		#banner h2 {
@@ -47,6 +47,14 @@
 		#banner p {
 			font-size: 1.25em;
 		}
+
+	#typed-box-mobile{
+		display: inline-block;
+	}
+
+	#typed-box{
+		display: none;
+	}
 
 /* Main */
 

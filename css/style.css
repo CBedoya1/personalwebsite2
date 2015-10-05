@@ -1173,3 +1173,10 @@
 					margin-left: 0;
 					padding-left: 0;
 				}
+
+
+/*---------------------CUSTOM------------------------*/
+
+#typed-box-mobile{
+	display: none;
+}
