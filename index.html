@@ -15,6 +15,7 @@
 			<link rel="stylesheet" href="css/skel.css" />
 			<link rel="stylesheet" href="css/style.css" />
 			<link rel="stylesheet" href="css/style-xlarge.css" />
+			<link rel="stylesheet" href="css/typedjs.css" />
 		</noscript>
 	</head>
 	<body class="landing">
@@ -33,8 +34,11 @@
 
 		<!-- Banner -->
 			<section id="banner">
-				<h2>Cristian Bedoya</h2>
-				<p>Lorem ipsum dolor sit amet nullam consequat <br /> interdum vivamus donce sed libero.</p>
+
+				<!--Typed Introduction-->
+					<h2>I am <span id="typed" style="white-space:pre;"></span></h2>
+				
+				</br></br></br></br> 
 				
 			</section>
 
@@ -173,4 +177,21 @@
 			</footer>
 
 	</body>
+
+	<script src="js/typed.js"></script>
+
+    <script>
+
+            //Type introduction
+            $(function(){
+                $("#typed").typed({
+                    strings: ["a <strong>hardware engineer</strong>", "a <strong>web developer</strong>", "an aspiring <strong>entrepreneur</strong>", "<strong>Cristian Bedoya</strong>"],
+                    typeSpeed: 40,
+                    backDelay: 400,
+                    
+                });
+            });
+
+    </script>
+
 </html>
