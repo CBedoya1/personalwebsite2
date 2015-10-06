@@ -11,6 +11,7 @@
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-layers.min.js"></script>
 		<script src="js/init.js"></script>
+		<script src="js/typed.js"></script>
 		<noscript>
 			<link rel="stylesheet" href="css/skel.css" />
 			<link rel="stylesheet" href="css/style.css" />
@@ -73,10 +74,9 @@
 
 			<!-- Onehalf -->
 				<section id="onehalf" class="wrapper style2 special">
-					<div class="container 100%">
+					<div class="container">
 
 						
-
 
 
 								<!--Skills-->
@@ -151,7 +151,7 @@
 
 
 						                        <li class="xaxis">
-						                            <div class="xlabel xlabel_first">Scripting...............................................</div>
+						                            <div class="xlabel xlabel_first">Scripting</div>
 						                            <div class="xlabel">Web Development</div>
 						                            <div class="xlabel">Hardware Design</div>
 						                        </li>
@@ -287,14 +287,14 @@
 
 	</body>
 
-	<script src="js/typed.js"></script>
+	
 
     <script>
 
             //Type introduction
             $(function(){
                 $("#typed").typed({
-                    strings: ["a <strong>hardware engineer</strong>", "a <strong>web developer</strong>", "an aspiring <strong>entrepreneur</strong>", "<strong>Cristian Bedoya</strong>"],
+                    strings: ["a hardware engineer", "a web developer", "an aspiring entrepreneur", "Cristian Bedoya "],
                     typeSpeed: 40,
                     backDelay: 400,
                     
@@ -357,7 +357,6 @@
 
 
             //Scroll smoothly to section of page
-
 			$(function() {
 			  $('a[href*=#]:not([href=#])').click(function() {
 			    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {

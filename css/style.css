@@ -1311,8 +1311,8 @@ body {
 }
 @media (min-width: 700px) {
   .chart .percent {
-    position: absolute;
-    font-size: 45px;
+    
+    font-size: 40px;
   }
 }
 .chart .percent span {
