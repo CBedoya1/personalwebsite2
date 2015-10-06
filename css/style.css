@@ -1180,3 +1180,31 @@
 #typed-box-mobile{
 	display: none;
 }
+
+#profilepic{
+        width: 175px;
+        height: 175px;
+        margin:auto;
+        background: url(../images/profilepic.png);
+        background-size: 100% 100%;
+		border-radius: 100%;
+
+    }
+
+/*For large screens*/
+@media (min-width: 700px) {
+  
+  #one p{
+	font-size: 125%;
+	line-height: 2.25;
+	}
+
+	#profilepic{
+		width: 200px;
+        height: 200px;
+	}
+
+}
+
+
+
