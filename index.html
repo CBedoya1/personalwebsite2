@@ -16,7 +16,8 @@
 			<link rel="stylesheet" href="css/style.css" />
 			<link rel="stylesheet" href="css/style-xlarge.css" />
 			<link rel="stylesheet" href="css/typedjs.css" />
-			<link rel="stylesheet" href="css/custom.css" />
+			<link rel="stylesheet" href="css/bargraph.css">
+			
 		</noscript>
 	</head>
 	<body class="landing">
@@ -64,6 +65,107 @@
 									<div id="profilepic"></div>
 								</br>
 								<p>I am a Master's Computer Engineering student at <strong>Northwestern University</strong>. I will be graduating in <strong>December of 2015 </strong>. I am passionate about creating technologies that enrich and change people's everyday lives. Stay tuned to see some of my work.</p> <p>Want to chat? Connect with me on <span> <a href="https://www.linkedin.com/pub/cristian-bedoya/49/515/243">LinkedIn</a></span></p> 
+							</div>
+						</div>
+					</div>
+				</section>
+
+			<!-- Onehalf -->
+				<section id="onehalf" class="wrapper style2 special">
+					<div class="container 76%">
+
+						<div class="row 200%">
+
+							<div class="12u$ 12u$(medium) special">
+
+
+
+								<!--Skills-->
+						        <div  id= "box3">
+
+						                </br>
+						                <h1>What can I do for you?</h1>
+
+						                <div id="skillschart">
+
+						                    <ul class="chart">
+						                        <li class="yaxis">
+						                            <div class="label">Jedi Grand Master</div>
+						                            <div class="label">Jedi Master</div>
+						                            <div class="label">Jedi Knight</div>
+						                            <div class="label">Padawan</div>
+						                            <div class="label">Youngling</div>
+						                        </li>
+
+
+						                        <!--Scripting-->
+						                        <li class="bar coolblue c_skill">
+						                            <div class="percent c_skill_percent"></div>
+						                            <div class="skill">C++</div>
+						                        </li>
+
+						                        <li class="bar coolblue py_skill">
+						                            <div class="percent py_skill_percent"></div>
+						                            <div class="skill">Python</div>
+						                        </li>
+
+						                        <li class="bar coolblue matlab_skill last_skill">
+						                            <div class="percent matlab_skill_percent"></div>
+						                            <div class="skill">MATLAB</div>
+						                        </li>
+
+
+
+						                        <!--Web Development-->
+						                        <li class="bar coolgray html_skill">
+						                            <div class="percent html_skill_percent"></div>
+						                            <div class="skill">HTML/CSS</div>
+						                        </li>
+
+						                        <li class="bar coolgray js_skill">
+						                            <div class="percent js_skill_percent"></div>
+						                            <div class="skill">Javascript</div>
+						                        </li>
+
+						                        <li class="bar coolgray responsive_skill last_skill">
+						                            <div class="percent responsive_skill_percent"></div>
+						                            <div class="skill">Responsive Design</div>
+						                        </li>
+
+
+						                        <!--Hardware Design-->
+						                        <li class="bar coolblue verilog_skill">
+						                            <div class="percent verilog_skill_percent"></div>
+						                            <div class="skill">Verilog</div>
+						                        </li>
+
+
+						                        <li class="bar coolblue vhdl_skill" >
+						                            <div class="percent vhdl_skill_percent"></div>
+						                            <div class="skill">VHDL</div>
+						                        </li>
+
+						                        <li class="bar coolblue cadence_skill last_skill">
+						                            <div class="percent cadence_skill_percent"></div>
+						                            <div class="skill">Cadence Virtuoso</div>
+						                        </li>
+
+
+						                        <li class="xaxis">
+						                            <div class="xlabel xlabel_first">Scripting...............................................</div>
+						                            <div class="xlabel">Web Development</div>
+						                            <div class="xlabel">Hardware Design</div>
+						                        </li>
+
+						                    </ul>
+
+
+						                </div>
+						                    
+						        </div> 
+								
+
+
 							</div>
 						</div>
 					</div>
@@ -200,6 +302,60 @@
                     
                 });
             });
+
+            //Activate bar graph when user scrolls down
+            $(function() {
+                var oTop = $('.c_skill').offset().top - window.innerHeight;
+                var count = 0;
+                $(window).scroll(function(){
+                
+                    var pTop = $('body').scrollTop();
+                    console.log( pTop + ' - ' + oTop );
+                    if( (pTop > oTop) && count <= 0){
+                        count = count + 1;
+                        start_bar_animation();
+                    }
+                });
+            });
+
+            //Start all the increasing bar animations
+            function start_bar_animation(){
+
+                //Add your code here
+                increment_bar($('.c_skill'),$('.c_skill_percent'), 85);
+                increment_bar($('.py_skill'),$('.py_skill_percent'), 95);
+                increment_bar($('.matlab_skill'),$('.matlab_skill_percent'), 90);
+                increment_bar($('.html_skill'),$('.html_skill_percent'), 95);
+                increment_bar($('.js_skill'),$('.js_skill_percent'), 80);
+                increment_bar($('.responsive_skill'),$('.responsive_skill_percent'), 85);
+                increment_bar($('.verilog_skill'),$('.verilog_skill_percent'), 85);
+                increment_bar($('.vhdl_skill'),$('.vhdl_skill_percent'), 80);
+                increment_bar($('.cadence_skill'),$('.cadence_skill_percent'), 85);
+            }
+
+
+            //Increment Skills chart
+            function increment_bar(progressBar, percent, final_val){
+                var height = 20;
+                var percent_val = 20;
+
+                progressBar.height(height);
+                percent.text(percent_val);
+
+
+                var interval = setInterval(function() {
+                    height += 1;
+                    percent_val += 1;
+
+                    progressBar.css('height', height + '%');
+                    percent.text(percent_val + '%') ;
+                    //console.log(name + ' ' + percent_val);
+
+                    if (height >= final_val) {
+                        clearInterval(interval);
+                    }
+                }, 9)
+            }
 
     </script>
 
