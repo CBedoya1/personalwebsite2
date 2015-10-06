@@ -28,6 +28,7 @@
 				<nav id="nav">
 					<ul>
 						<li><a href="index.html">Home</a></li>
+						<li><a href="#onehalf">Skills</a></li> 
 						<li><a href="generic.html">Generic</a></li>
 						<li><a href="elements.html">Elements</a></li>
 					</ul>
@@ -72,11 +73,9 @@
 
 			<!-- Onehalf -->
 				<section id="onehalf" class="wrapper style2 special">
-					<div class="container 76%">
+					<div class="container 100%">
 
-						<div class="row 200%">
-
-							<div class="12u$ 12u$(medium) special">
+						
 
 
 
@@ -84,7 +83,7 @@
 						        <div  id= "box3">
 
 						                </br>
-						                <h1>What can I do for you?</h1>
+						                <h2>What can I do for you?</h2>
 
 						                <div id="skillschart">
 
@@ -166,8 +165,7 @@
 								
 
 
-							</div>
-						</div>
+							
 					</div>
 				</section>
 
@@ -356,6 +354,26 @@
                     }
                 }, 9)
             }
+
+
+            //Scroll smoothly to section of page
+
+			$(function() {
+			  $('a[href*=#]:not([href=#])').click(function() {
+			    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+
+			      var target = $(this.hash);
+			      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+			      if (target.length) {
+			        $('html,body').animate({
+			          scrollTop: target.offset().top
+			        }, 1000);
+			        return false;
+			      }
+			    }
+			  });
+			});
+	
 
     </script>
 
