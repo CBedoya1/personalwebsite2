@@ -10,6 +10,11 @@
 		font-size: 11pt;
 	}
 
+
+.wrapper {
+		padding-top: 4em;
+	}
+
 .chart .percent{
 	margin-top: 10px; /*Used to center percentage*/
 
