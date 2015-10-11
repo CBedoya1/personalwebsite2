@@ -45,4 +45,19 @@
 	}
 
 
+/*Custom*/
+.chart .percent{
+	margin-top: 10px; /*Used to center percentage*/
+	font-size: 225%;
+
+}
+
+.chart .skill{
+
+	font-size: 7pt;
+}
+
+
+
+
 
