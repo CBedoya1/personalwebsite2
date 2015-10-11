@@ -9,3 +9,18 @@
 	body, input, select, textarea {
 		font-size: 11pt;
 	}
+
+.chart .percent{
+	margin-top: 10px; /*Used to center percentage*/
+
+}
+
+.chart .skill{
+
+	font-size: 9pt;
+}
+
+.chart .label{
+	line-height: .85;
+	padding: 3px 3px 3px 3px;
+}
