@@ -1364,6 +1364,11 @@ body {
   margin: 0 7.79% 0 0;
 
 	}
+
+	.chart .cadence_skill {
+  margin: 0 7.79% 0 0;
+
+	}
 }
 
 
@@ -1449,6 +1454,11 @@ body {
 
 
 #experience i{
+	color: #81B4EE;
+}
+
+#projects h4{
+
 	color: #81B4EE;
 }
 

@@ -141,3 +141,67 @@
 			#navPanel nav .button {
 				width: 100%;
 			}
+
+/*Custom*/
+
+.chart .xlabel_last{
+	margin-left: 0px;
+}
+
+.chart .last_skill {
+  margin: 0 0 0 0;
+
+}
+
+.chart li {
+    width: 9%;
+}
+
+.chart .cadence_skill{
+	margin: 0 0 0 0;
+}
+
+.chart .percent{
+	margin-top: 0px; /*Used to center percentage*/
+	font-size: 160%;
+
+}
+
+.chart .skill{
+
+	font-size: 7pt;
+}
+
+.chart .label{
+	line-height: .85;
+	padding: 5px 5px 5px 5px;
+	margin-right: -20px;
+	font-size: 75%;
+
+}
+
+.chart .yaxis {
+  top: emCalc(-45px);
+  left: -2px;
+  width: 10%;
+}
+
+.chart .c_skill{
+	margin-left: 20px;
+
+}
+
+.chart .xlabel {
+    margin-right: 3px;
+    width: 28.5%;
+  
+ }
+
+.chart .xlabel_first{
+  margin-left:94px;
+}
+
+  .chart .xlabel_last{
+	
+	margin-right: 0px;
+}
