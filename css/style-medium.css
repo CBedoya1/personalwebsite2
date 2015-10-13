@@ -142,7 +142,9 @@
 				width: 100%;
 			}
 
-/*Custom*/
+
+@media (min-width: 700px) {
+	/*Custom*/
 
 .chart .xlabel_last{
 	margin-left: 0px;
@@ -204,4 +206,7 @@
   .chart .xlabel_last{
 	
 	margin-right: 0px;
+}
+	
+
 }

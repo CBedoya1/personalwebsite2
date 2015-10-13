@@ -45,27 +45,31 @@
 	}
 
 
+
 /*Custom*/
-.chart .percent{
-	margin-top: 10px; /*Used to center percentage*/
-	font-size: 225%;
 
-}
+@media (min-width: 700px) {
 
-.chart .skill{
+	.chart .percent{
+		margin-top: 10px; /*Used to center percentage*/
+		font-size: 225%;
 
-	font-size: 8pt;
-}
+	}
 
-.chart li {
-    display: inline-block;
-    height: 425px;
-    /*margin: 0 1.8% 0 0;*/  /*Spacing between bars*/
-    width: 7.9%;
-    padding-left: 0;
-}
+	.chart .skill{
 
-/*Space between bar sections*/
+		font-size: 8pt;
+	}
+
+	.chart li {
+	    display: inline-block;
+	    height: 425px;
+	    /*margin: 0 1.8% 0 0;*/  /*Spacing between bars*/
+	    width: 7.9%;
+	    padding-left: 0;
+	}
+
+	/*Space between bar sections*/
  .chart .last_skill {
 
   	margin: 0 5% 0 0;
@@ -85,6 +89,10 @@
 	
 	margin-right: 0px;
 }
+ 
+}
+
+
 
 
 
