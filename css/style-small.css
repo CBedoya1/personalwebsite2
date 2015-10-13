@@ -77,3 +77,60 @@
 		#footer .icons {
 			font-size: 1em;
 		}
+
+/*Scripting Skills*/
+.chart .c_skill{
+  height: 85%;
+  width: 0;
+
+}
+
+.chart .py_skill{
+  height: 85%;
+  width: 0;
+
+}
+
+.chart .matlab_skill{
+  height: 85%;
+  width: 0;
+
+}
+
+/*Web Development*/
+.chart .html_skill{
+  height: 85%;
+  width: 0;
+
+}
+
+.chart .js_skill{
+  height: 85%;
+  width: 0;
+
+}
+
+.chart .responsive_skill{
+  height: 85%;
+  width: 0;
+
+}
+
+/*Hardware Design*/
+.chart .verilog_skill{
+  height: 85%;
+  width: 0;
+
+}
+
+.chart .vhdl_skill{
+  height: 85%;
+  width: 0;
+
+}
+
+.chart .cadence_skill{
+  height: 85%;
+  width: 0;
+
+}
