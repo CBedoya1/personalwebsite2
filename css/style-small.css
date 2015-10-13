@@ -81,56 +81,56 @@
 /*Scripting Skills*/
 .chart .c_skill{
   height: 85%;
-  width: 0;
+  width: 100%;
 
 }
 
 .chart .py_skill{
   height: 85%;
-  width: 0;
+  width: 100%;
 
 }
 
 .chart .matlab_skill{
   height: 85%;
-  width: 0;
+  width: 100%;
 
 }
 
 /*Web Development*/
 .chart .html_skill{
   height: 85%;
-  width: 0;
+  width: 100%;
 
 }
 
 .chart .js_skill{
   height: 85%;
-  width: 0;
+  width: 100%;
 
 }
 
 .chart .responsive_skill{
   height: 85%;
-  width: 0;
+  width: 100%;
 
 }
 
 /*Hardware Design*/
 .chart .verilog_skill{
   height: 85%;
-  width: 0;
+  width: 100%;
 
 }
 
 .chart .vhdl_skill{
   height: 85%;
-  width: 0;
+  width: 100%;
 
 }
 
 .chart .cadence_skill{
   height: 85%;
-  width: 0;
+  width: 100%;
 
 }

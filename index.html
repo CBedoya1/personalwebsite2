@@ -409,25 +409,41 @@
             function increment_bar_small(progressBar, percent, final_val){
                
 
-                var width = 20;
                 var percent_val = 20;
-
-                progressBar.width(width);
+                var jedi = '';
                 percent.text(percent_val);
 
 
                 var interval = setInterval(function() {
-                    width += 1;
+                    
                     percent_val += 1;
 
-                    progressBar.css('width', width + '%');
-                    percent.text(percent_val + '%') ;
-                    //console.log(name + ' ' + percent_val);
+                    //What level of jedi to appear
+                    if (percent_val < 40){
+                    	jedi = 'Youngling';
+                    }
+                    else if (percent_val < 60){
+                    	jedi = 'Padawan';
+                    }
+                    else if (percent_val < 80){
+                    	jedi = 'Jedi Knight';
+                    }
+                    else if (percent_val < 100){
+                    	jedi = 'Jedi Master';
+                    }	
+                    else{
+                    	jedi = 'Jedi Grand Master';
+                    }
 
-                    if (width >= final_val) {
+
+
+                    percent.text(percent_val + '% -' + jedi ) ;
+                   
+
+                    if (percent_val >= final_val) {
                         clearInterval(interval);
                     }
-                }, 9)
+                }, 17)
             }
 
 
