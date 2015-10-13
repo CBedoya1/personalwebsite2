@@ -12,12 +12,13 @@
 		<script src="js/skel-layers.min.js"></script>
 		<script src="js/init.js"></script>
 		<script src="js/typed.js"></script>
+		<script src="js/wow.min.js"></script>
 		<noscript>
 			<link rel="stylesheet" href="css/skel.css" />
 			<link rel="stylesheet" href="css/style.css" />
 			<link rel="stylesheet" href="css/style-xlarge.css" />
 			<link rel="stylesheet" href="css/typedjs.css" />
-			<link rel="stylesheet" href="css/bargraph.css">
+			<link rel="stylesheet" href="css/animate.css">
 			
 		</noscript>
 	</head>
@@ -178,7 +179,7 @@
 						<div class="feature-grid">
 							
 							<!--The Kegrig-->
-							<div class="feature">
+							<div class="feature wow slideInLeft">
 								<a href="kegrig.html"><div class="image rounded"><img src="images/kegrig_icon2.png" alt="" /></div></a>
 								<div class="content">
 
@@ -191,7 +192,7 @@
 							</div>
 
 							<!--32-bit DLX processor-->
-							<div class="feature">
+							<div class="feature wow slideInRight" data-wow-offset="75">
 								<div class="image rounded"><img src="images/pic05.jpg" alt="" /></div>
 								<div class="content">
 									<header>
@@ -203,7 +204,7 @@
 							</div>
 
 							<!--Compiler Research-->
-							<div class="feature">
+							<div class="feature wow slideInLeft" data-wow-offset="75">
 								<div class="image rounded"><img src="images/pic06.jpg" alt="" /></div>
 								<div class="content">
 									<header>
@@ -215,7 +216,7 @@
 							</div>
 
 							<!--Winnie the Pooh-->
-							<div class="feature">
+							<div class="feature wow slideInRight" data-wow-offset="75">
 								<div class="image rounded"><img src="images/pic07.jpg" alt="" /></div>
 								<div class="content">
 									<header>
@@ -226,7 +227,7 @@
 								</div>
 							</div>
 
-							<div class="feature">
+							<div class="feature wow slideInLeft" data-wow-offset="75">
 								<div class="image rounded"><img src="images/pic07.jpg" alt="" /></div>
 								<div class="content">
 									<header>
@@ -237,7 +238,7 @@
 								</div>
 							</div>
 
-							<div class="feature">
+							<div class="feature wow slideInRight" data-wow-offset="75">
 								<div class="image rounded"><img src="images/pic07.jpg" alt="" /></div>
 								<div class="content">
 									<header>
@@ -258,27 +259,47 @@
 						<header class="major special">
 							<h2>Experience</h2>
 						</header>
-						<h3>SoC Engineering Intern, <i>Intel Corporation</i></h3>
-						<h4>July 2015-September 2015</h4>
-						
 
+
+						<section class = "wow fadeInUp" data-wow-offset="50">
+
+							<h3>SoC Engineering Intern, <i>Intel Corporation</i></h3>
+							<h4>July 2015-September 2015</h4>
+						
 							<p>Resolved firmware and digital logic bugs present in the power management unit in the upcoming Intel Puma chipset. Accelerated and simplified the validation process by constructing custom scripts that automated running tests and data collection. Produced scripts that consolidated and analyzed weeks-worth of data into single reports to help engineering leads easily see the current progress made in the project</p>
 
-						<h3>Hardware Validation Intern, <i>Intel Corporation</i></h3>
-						<h4>July 2014-September 2014</h4>
-						
+						</section>
 
+
+						<section class = "wow fadeInUp" data-wow-offset="50">
+
+							<h3>Hardware Validation Intern, <i>Intel Corporation</i></h3>
+							<h4>July 2014-September 2014</h4>
+						
 							<p>Generated a formal validation model to examine and test the features of a new communication protocol to be used in a large-scale computing system. Incorporated feedback from engineers across sites in order to construct a robust model. Documented the details of the protocol so as to provide other engineering groups with a background on the workings of the system</p>
 
-						<h3>Software Engineering Intern, <i>Intel Corporation</i> </h3>
-						<h4>April 2013-September 2013</h4>
+						</section>
+
+						
+						<section class = "wow fadeInUp" data-wow-offset="50">
+
+							<h3>Software Engineering Intern, <i>Intel Corporation</i> </h3>
+							<h4>April 2013-September 2013</h4>
 
 							<p>Collaborated with cross-disciplinary experts in the yield department, identified areas of inefficiency, and translated them into software solutions. Designed and implemented a monitoring system that allowed yield engineers to detect failures in production tools at an earlier stage in production. Rewrote and restructured existing software to streamline the collecting and reporting of yield data and reduced the task process time by 80% </p>
 
-						<h3>Electronics Intern, <i>Draper Laboratory</i> </h3>
-						<h4>June 2012-August 2012</h4>
+						</section>
+
+						<section class = "wow fadeInUp" data-wow-offset="50">
+
+							<h3>Electronics Intern, <i>Draper Laboratory</i> </h3>
+							<h4>June 2012-August 2012</h4>
 
 							<p>Engaged in research and development of a smaller and more stable temperature- compensated crystal oscillator (TCXO) to be used in GPS navigation. Developed MATLAB scripts used to program source meters, function generators, and other instruments used for collecting temperature data on TCXO </p>
+
+						</section>
+
+												
 													
 					</div>
 				</section>
@@ -319,6 +340,9 @@
 	
 
     <script>
+
+    		//Activate WOW
+    		new WOW().init();
 
             //Type introduction
             $(function(){
@@ -443,7 +467,7 @@
                     if (percent_val >= final_val) {
                         clearInterval(interval);
                     }
-                }, 17)
+                }, 20)
             }
 
 
