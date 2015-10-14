@@ -17,6 +17,12 @@
 
 @media (min-width: 700px) {
 
+	#one h2{
+	text-transform: none;
+	font-size: 250%;
+
+	}
+
 	.chart .percent{
 	margin-top: 10px; /*Used to center percentage*/
 
