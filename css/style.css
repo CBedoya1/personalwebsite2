@@ -1197,6 +1197,11 @@
 		font-weight: 700;
 	}
 
+#four .button.special {
+			background-color: #81B4EE;
+			color: #ffffff !important;
+		}
+
 
 #typed-box-mobile{
 	display: none;
