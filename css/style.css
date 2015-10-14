@@ -1071,6 +1071,7 @@
 			font-size: 3.5em;
 			line-height: 1.35;
 			margin-bottom: 0.5em;
+			text-transform: none;
 		}
 
 		#banner p {
@@ -1102,7 +1103,7 @@
 
 		.wrapper.style3 {
 			background-attachment: fixed;
-			background-image: url("images/overlay.png"), url("../images/banner.jpg");
+			background-image: url("images/overlay.png"), url("../images/background1compressed.jpg");
 			background-position: center center;
 			background-size: cover;
 		}
@@ -1176,6 +1177,26 @@
 
 
 /*---------------------CUSTOM------------------------*/
+
+#one h2{
+	text-transform: none;
+	font-size: 250%;
+
+}
+
+#one strong, b {
+		color: #81B4EE;
+	}
+
+#banner h2{
+	font-weight: 300;
+}
+
+#banner strong, b {
+		color: #ffffff;
+		font-weight: 700;
+	}
+
 
 #typed-box-mobile{
 	display: none;
@@ -4735,6 +4756,67 @@ Copyright (c) 2015 Daniel Eden
   -webkit-animation-name: slideOutUp;
   animation-name: slideOutUp;
 }
+
+
+/*Typed CSS*/
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:400,500);
+
+
+
+.wrap{
+	max-width: 600px;
+	margin:150px auto;
+}
+
+.type-wrap{
+	margin:10px auto;
+	padding:20px;
+	background:#f0f0f0;
+	border-radius:5px;
+	border:#CCC 1px solid;
+}
+
+.links{
+	margin:20px 0;
+	font-size: 0.75em;
+	text-align: center;
+}
+
+/* code for animated blinking cursor */
+        .typed-cursor{
+            opacity: 1;
+            font-weight: 100;
+            -webkit-animation: blink 0.7s infinite;
+            -moz-animation: blink 0.7s infinite;
+            -ms-animation: blink 0.7s infinite;
+            -o-animation: blink 0.7s infinite;
+            animation: blink 0.7s infinite;
+        }
+        @-keyframes blink{
+            0% { opacity:1; }
+            50% { opacity:0; }
+            100% { opacity:1; }
+        }
+        @-webkit-keyframes blink{
+            0% { opacity:1; }
+            50% { opacity:0; }
+            100% { opacity:1; }
+        }
+        @-moz-keyframes blink{
+            0% { opacity:1; }
+            50% { opacity:0; }
+            100% { opacity:1; }
+        }
+        @-ms-keyframes blink{
+            0% { opacity:1; }
+            50% { opacity:0; }
+            100% { opacity:1; }
+        }
+        @-o-keyframes blink{
+            0% { opacity:1; }
+            50% { opacity:0; }
+            100% { opacity:1; }
+        }
 
 
 
