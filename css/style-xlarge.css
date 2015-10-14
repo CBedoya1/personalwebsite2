@@ -38,5 +38,11 @@
 	padding: 3px 3px 3px 3px;
 	}
 
+	.videocontainer {
+		height: 500px;
+		width: 100%;
+
+	}
+
 }
 
