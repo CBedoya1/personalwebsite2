@@ -1203,6 +1203,10 @@
 			color: #ffffff !important;
 }
 
+.centerbox h2{
+	text-align: center;
+}
+
 #typed-box-mobile{
 	display: none;
 }

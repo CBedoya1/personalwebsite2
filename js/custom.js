@@ -5,7 +5,7 @@
             //Type introduction
             $(function(){
                 $("#typed").typed({
-                    strings: ["a <strong>hardware engineer </strong>", "a <strong>web developer</strong>", "an <strong>aspiring entrepreneur</strong>", "<strong>Cristian Bedoya</strong> "],
+                    strings: ["a <strong>computer engineer </strong>", "a <strong>web developer</strong>", "an <strong>aspiring entrepreneur</strong>", "<strong>Cristian Bedoya</strong> "],
                     typeSpeed: 40,
                     backDelay: 400,
                     

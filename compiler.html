@@ -2,10 +2,12 @@
 
 <html>
 	<head>
-		<title>Projects - Kegrig Automated Cocktail Mixer</title>
+		<title>Projects - Compiler Optimization Research</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
+
+		<link rel="icon" href="images/favicon.ico">
 		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
 		<script src="js/jquery.min.js"></script>
 		<script src="js/skel.min.js"></script>
@@ -37,14 +39,51 @@
 				<div class="container">
 
 					<header class="major special">
-						<h2>Kegrig</h2>
-						<p>Automated Cocktail Mixer</p>
+						<h2>Compiler Optimization Research</h2>
+						<p>Finding the Right Compiler for an Application</p>
 					</header>
 
-					<iframe class= "image fit" width="560" height="315" src="https://www.youtube.com/embed/k95nEPHHswk" frameborder="0" allowfullscreen></iframe>
-					<p>Vis accumsan feugiat adipiscing nisl amet adipiscing accumsan blandit accumsan sapien blandit ac amet faucibus aliquet placerat commodo. Interdum ante aliquet commodo accumsan vis phasellus adipiscing. Ornare a in lacinia. Vestibulum accumsan ac metus massa tempor. Accumsan in lacinia ornare massa amet. Ac interdum ac non praesent. Cubilia lacinia interdum massa faucibus blandit nullam. Accumsan phasellus nunc integer. Accumsan euismod nunc adipiscing lacinia erat ut sit. Arcu amet. Id massa aliquet arcu accumsan lorem amet accumsan.</p>
-					<p>Amet nibh adipiscing adipiscing. Commodo ante vis placerat interdum massa massa primis. Tempus condimentum tempus non ac varius cubilia adipiscing placerat lorem turpis at. Aliquet lorem porttitor interdum. Amet lacus. Aliquam lobortis faucibus blandit ac phasellus. In amet magna non interdum volutpat porttitor metus a ante ac neque. Nisi turpis. Commodo col. Interdum adipiscing mollis ut aliquam id ante adipiscing commodo integer arcu amet Ac interdum ac non praesent. Cubilia lacinia interdum massa faucibus blandit nullam. Accumsan phasellus nunc integer. Accumsan euismod nunc adipiscing lacinia erat ut sit. Arcu amet. Id massa aliquet arcu accumsan lorem amet accumsan commodo odio cubilia ac eu interdum placerat placerat arcu commodo lobortis adipiscing semper ornare pellentesque.</p>
-					<p>Amet nibh adipiscing adipiscing. Commodo ante vis placerat interdum massa massa primis. Tempus condimentum tempus non ac varius cubilia adipiscing placerat lorem turpis at. Aliquet lorem porttitor interdum. Amet lacus. Aliquam lobortis faucibus blandit ac phasellus. In amet magna non interdum volutpat porttitor metus a ante ac neque. Nisi turpis. Commodo col. Interdum adipiscing mollis ut aliquam id ante adipiscing commodo integer arcu amet blandit adipiscing arcu ante.</p>
+
+					<h3>Introduction</h3>
+					<p>
+						During a ten week period, the team designed and built a five stage pipelined processor. By the end of the ten weeks the processor was required to run through a sequence of DLX instructions without encountering any errors. To accomplish this, the processor had to have both <strong>hazard detection</strong> and <strong> forwarding </strong> capabilities. After taking on this project, the team designed a single cycle processor in order to establish a framework for the basic functionality of pipelined processor. The single cycle processor’s datapath was then divided into five separate parts and other components were added to turn the design into a pipelined register. For example, registers were placed in between each part to forward on the required signals for an instruction. In addition, other elements were added to allow for hazard detection and forwarding.  
+					</p>
+
+					<h3>Design Requirements and Constraints</h3>
+
+						<ul>
+							<li><strong>Hazard Detection Unit:</strong> The processor has to be able to detect hazards, such as read after write hazards. After detecting hazards, the processor has to solve them through forwarding. </li>
+							<li><strong>Forwarding Unit: </strong>The processor has to be able to forward data to the next instruction as a way to solve hazard issues.</li>
+							<li><strong>DLX Instruction Set Architecture:</strong> The processor is required to support the DLX instruction set architecture and to run through a series of DLX instructions without failing.</li>
+							<li><strong>Area:</strong> Total area under 35,000 μm2 </li>
+							<li><strong>Frequency:</strong> Must operate at clock frequency of more than 800 MHz without any timing violations</li>	
+						</ul>
+
+
+
+					<h3>Design Approach</h3>
+					<p>
+						Although a pipelined and single cycle processor differ in their CPI's and datapath, they share many common elements, such as the program counter, the register file, and the data memory.  As a result, the team first determined and discussed the features that a single cycle processor is comprised of to understand the basic functionality of  the processor. The team then designed and implemented the components and built a single cycle processor to create a solid foundation that could be built upon to create the pipelined processor. </br> After verifying the functionality of the single cycle processor the team discussed additional elements that were required for the pipelined processor, such as the forwarding unit, as well as the elements that would need to be modified in the single cycle datapath. The team then modified the single cycle processor datapath and incorporated the new elements to create a functional five stage pipelined processor. 
+					</p>
+
+					<h3>Performance and Testing</h3>
+					<p>
+						We tested our design by creating a testbench and using it to simulate a few sample programs given to us: multiply, unsigned sum, and fibonacci. The testbench fed a clock cycle to the processor and also set its data and instruction memories. At each clock cycle, it printed out a select number of control signals and wires inside the processor in order to see what each instruction was doing. At the end of each program was a trap instruction, which signaled to the testbench to stop sending new cycles. After finishing execution, the testbench printed out the contents of the data memory in order to confirm that the processor did what it was supposed to.  
+					</p>
+
+					<h3>Conclusion</h3>
+					<p>
+						Our processor was significantly able to meet all the requirements of the project. The total area was only about 600 μm2 over the constraint, and we were able to successfully implement all the necessary instructions from the DLX instruction set. The test program outputs matched the actual behavior of each of their corresponding programs. Though we were not able to figure out how well the timing held up, if we wanted to improve this processor in the future, we would optimize some of the longer critical paths of individual components such as the ALU. If we wanted to reduce the total area of the processor, there are probably some unnecessary components left over from building the single cycle processor that could be removed. We could also implement some more instructions from the instruction set such as divide or the floating point instructions. All of these modifications would help improve the efficiency of our design. 
+					</p>
+
+					<section class="returnbutton wrapper special">
+
+					<ul class=" actions">
+							<li><a href="index.html#projects" class="button special big">Back to Projects</a></li>
+					</ul></section>
+					
+
+
 
 				</div>
 			</section>
@@ -53,14 +92,14 @@
 			<footer id="footer">
 				<div class="container">
 					<ul class="icons">
-						<li><a href="#" class="icon fa-facebook"></a></li>
-						<li><a href="#" class="icon fa-twitter"></a></li>
-						<li><a href="#" class="icon fa-instagram"></a></li>
+						
+						<li><a href="https://www.linkedin.com/pub/cristian-bedoya/49/515/243" class="icon fa-linkedin"></a></li>
+						<li><a href="https://www.youtube.com/user/CBEDOYA1084" class="icon fa-youtube"></a></li>
 					</ul>
 					<ul class="copyright">
-						<li>&copy; Untitled</li>
-						<li>Design: <a href="http://templated.co">TEMPLATED</a></li>
-						<li>Images: <a href="http://unsplash.com">Unsplash</a></li>
+						<li>&copy; 2015 Cristian Bedoya</li>
+						<li>Written over some hot Intelligentsia Coffee</li>
+						
 					</ul>
 				</div>
 			</footer>
