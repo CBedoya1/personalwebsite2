@@ -1,6 +1,9 @@
 
-    		//Activate WOW
-    		new WOW().init();
+    		//Activate WOW for large screens only
+            if (window.innerWidth > 700){
+                new WOW().init();
+            }
+    		
 
             //Type introduction
             $(function(){
