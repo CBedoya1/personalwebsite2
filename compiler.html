@@ -46,35 +46,74 @@
 
 					<h3>Introduction</h3>
 					<p>
-						During a ten week period, the team designed and built a five stage pipelined processor. By the end of the ten weeks the processor was required to run through a sequence of DLX instructions without encountering any errors. To accomplish this, the processor had to have both <strong>hazard detection</strong> and <strong> forwarding </strong> capabilities. After taking on this project, the team designed a single cycle processor in order to establish a framework for the basic functionality of pipelined processor. The single cycle processor’s datapath was then divided into five separate parts and other components were added to turn the design into a pipelined register. For example, registers were placed in between each part to forward on the required signals for an instruction. In addition, other elements were added to allow for hazard detection and forwarding.  
+						For state-of-art general purpose processors, chip multiprocessors (CMPs) have become the dominant form. The transition from the sequential programming to the parallel programming gave a disruptive change to the way of writing code and compiling to fully use the hardware. Performance gains for applications can no longer be achieved without modifying the underlying source code because almost all future applications are parallel. After the modification, it is the time to compile these applications and optimize them by turning on different options. In this way, insctruction count (IC) and cycles per instruction (CPI) are improved accordingly. However, there is not much research into the impact of application-level standard optimizations on various programs. This study aims at analyzing effects of different compiler optimizations on the performance of parallel applications running on CMP systems.
 					</p>
-
-					<h3>Design Requirements and Constraints</h3>
-
-						<ul>
-							<li><strong>Hazard Detection Unit:</strong> The processor has to be able to detect hazards, such as read after write hazards. After detecting hazards, the processor has to solve them through forwarding. </li>
-							<li><strong>Forwarding Unit: </strong>The processor has to be able to forward data to the next instruction as a way to solve hazard issues.</li>
-							<li><strong>DLX Instruction Set Architecture:</strong> The processor is required to support the DLX instruction set architecture and to run through a series of DLX instructions without failing.</li>
-							<li><strong>Area:</strong> Total area under 35,000 μm2 </li>
-							<li><strong>Frequency:</strong> Must operate at clock frequency of more than 800 MHz without any timing violations</li>	
-						</ul>
-
-
-
-					<h3>Design Approach</h3>
 					<p>
-						Although a pipelined and single cycle processor differ in their CPI's and datapath, they share many common elements, such as the program counter, the register file, and the data memory.  As a result, the team first determined and discussed the features that a single cycle processor is comprised of to understand the basic functionality of  the processor. The team then designed and implemented the components and built a single cycle processor to create a solid foundation that could be built upon to create the pipelined processor. </br> After verifying the functionality of the single cycle processor the team discussed additional elements that were required for the pipelined processor, such as the forwarding unit, as well as the elements that would need to be modified in the single cycle datapath. The team then modified the single cycle processor datapath and incorporated the new elements to create a functional five stage pipelined processor. 
+					We consider performing different degrees of optimizations with respect to workloads of the PARSEC benchmark suites. Each of them represents a multi-threaded emerging application. They have diverse application domains. This application-specific optimization study would benefit future works.
+ 
 					</p>
 
-					<h3>Performance and Testing</h3>
+					<h3>Methodology</h3>
 					<p>
-						We tested our design by creating a testbench and using it to simulate a few sample programs given to us: multiply, unsigned sum, and fibonacci. The testbench fed a clock cycle to the processor and also set its data and instruction memories. At each clock cycle, it printed out a select number of control signals and wires inside the processor in order to see what each instruction was doing. At the end of each program was a trap instruction, which signaled to the testbench to stop sending new cycles. After finishing execution, the testbench printed out the contents of the data memory in order to confirm that the processor did what it was supposed to.  
+					We analyzed the impact on performance of four different optimization levels on the benchmark workloads in PARSEC 3.0. The diagram below explains the approach we decided to test out each workload. Each selected benchmark application was compiled four different times, each time compiled with a different optimization flag. The flags used were O0, O1, O2, and O3. Each binary produced, was run under Intel® VTune™ Amplifier XE 2013 software. The Vtune outputs the performance metrics for each benchmark.
 					</p>
 
-					<h3>Conclusion</h3>
+
+					<div id="bigpic">
+						<section class = "special">
+						<a class="image"><img src="images/compiler/blockdiagram.png" /></a>
+						</section>
+					</div>
+
+					<div id="smallpic">
+						<section class = "special">
+						<a class="image fit"><img src="images/compiler/blockdiagram.png" /></a>
+						</section>
+
+					</div>
+
+					<h3>Experimental Results</h3>
 					<p>
-						Our processor was significantly able to meet all the requirements of the project. The total area was only about 600 μm2 over the constraint, and we were able to successfully implement all the necessary instructions from the DLX instruction set. The test program outputs matched the actual behavior of each of their corresponding programs. Though we were not able to figure out how well the timing held up, if we wanted to improve this processor in the future, we would optimize some of the longer critical paths of individual components such as the ALU. If we wanted to reduce the total area of the processor, there are probably some unnecessary components left over from building the single cycle processor that could be removed. We could also implement some more instructions from the instruction set such as divide or the floating point instructions. All of these modifications would help improve the efficiency of our design. 
+						We compiled the PARSEC workloads in 4 different optimization levels. Then measure CPU Time, Elapsed Time, CPI, IC using 100 runs in average. Besides the mean value of these testing, we also record the statistics including highest value, lowest value, mode value, standard deviation of these runs. Results from these tests are shown below. 
 					</p>
+
+					<section class="special">
+						<div class="box alt">
+								<div class="row 50% uniform">
+									
+									<div class="6u"> 
+										<span class="image fit captioned"><img src="images/compiler/bargraphs.png" alt="" />
+										<h3>Comparisons Among Optimizations</h3></span>
+									</div>
+
+									<div class="6u"> 
+										<span class="image fit captioned"><img src="images/compiler/chart.png" alt="" />
+										<h3>Average Elapsed and CPU Time</h3></span>
+										
+									</div>
+									
+								</div>
+						</div>
+					</section>
+					
+					
+
+					<h3>Discussion and Conclusion </h3>
+					<p>
+						By comparing the values in the test results and the information on the specific PARSEC applications, we found in most cases no optimization options give the worst case execution time. This proves that there are effects of optimizations on the performance on these parallel applications. Additionally, we found O1­O2 give the best cases most, which means that O1 and O2 options are good enough for application optimizations. Deepen the optimization level would harm the performance sometimes. For parallel models, such as D​edup and F​erret,​ O0 and O1 are the best options. Doing optimizations would just increase the time and thus decrease the performance. For the communication intensive models, such as F​luidanimate and F​reqmine,​ O3 gives the best performance. It means for them O3 can do some specific optimizations besides the normal ones which are able to benefit these models.
+					</p>
+
+					<p>
+						After the compilation in different optimization level and running them under simulations, we evaluated the results and made a few summaries. For most applications O1-O2 are the recommended optimization levels. For pipelined models of applications O0 and O1 get better performance than higher optimization levels. O3 is the best option for communication intensive applications which have a lot of synchronization, such as locks and barriers. And in most cases O1-O3 are much better than O0, that is, doing optimization improves the performance of applications a lot. Therefore, it is safe to make a conclusion that various compiler optimizations would have effects on the performance of parallel applications running on CMP systems.
+
+					</p>
+
+
+
+				
+
+
+
 
 					<section class="returnbutton wrapper special">
 
