@@ -134,3 +134,11 @@
   width: 100%;
 
 }
+
+#smallpic{
+	display: inline-block;
+}
+
+#bigpic{
+	display: none;
+}
