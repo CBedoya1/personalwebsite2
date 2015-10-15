@@ -2,10 +2,12 @@
 
 <html>
 	<head>
-		<title>Projects - Kegrig Automated Cocktail Mixer</title>
+		<title>Projects - Depth From Defocus</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
+
+		<link rel="icon" href="images/favicon.ico">
 		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
 		<script src="js/jquery.min.js"></script>
 		<script src="js/skel.min.js"></script>
@@ -37,14 +39,123 @@
 				<div class="container">
 
 					<header class="major special">
-						<h2>Kegrig</h2>
-						<p>Automated Cocktail Mixer</p>
+						<h2>Depth From Defocus</h2>
+						<p>Measuring Distance with a camera</p>
 					</header>
 
-					<iframe class= "image fit" width="560" height="315" src="https://www.youtube.com/embed/k95nEPHHswk" frameborder="0" allowfullscreen></iframe>
-					<p>Vis accumsan feugiat adipiscing nisl amet adipiscing accumsan blandit accumsan sapien blandit ac amet faucibus aliquet placerat commodo. Interdum ante aliquet commodo accumsan vis phasellus adipiscing. Ornare a in lacinia. Vestibulum accumsan ac metus massa tempor. Accumsan in lacinia ornare massa amet. Ac interdum ac non praesent. Cubilia lacinia interdum massa faucibus blandit nullam. Accumsan phasellus nunc integer. Accumsan euismod nunc adipiscing lacinia erat ut sit. Arcu amet. Id massa aliquet arcu accumsan lorem amet accumsan.</p>
-					<p>Amet nibh adipiscing adipiscing. Commodo ante vis placerat interdum massa massa primis. Tempus condimentum tempus non ac varius cubilia adipiscing placerat lorem turpis at. Aliquet lorem porttitor interdum. Amet lacus. Aliquam lobortis faucibus blandit ac phasellus. In amet magna non interdum volutpat porttitor metus a ante ac neque. Nisi turpis. Commodo col. Interdum adipiscing mollis ut aliquam id ante adipiscing commodo integer arcu amet Ac interdum ac non praesent. Cubilia lacinia interdum massa faucibus blandit nullam. Accumsan phasellus nunc integer. Accumsan euismod nunc adipiscing lacinia erat ut sit. Arcu amet. Id massa aliquet arcu accumsan lorem amet accumsan commodo odio cubilia ac eu interdum placerat placerat arcu commodo lobortis adipiscing semper ornare pellentesque.</p>
-					<p>Amet nibh adipiscing adipiscing. Commodo ante vis placerat interdum massa massa primis. Tempus condimentum tempus non ac varius cubilia adipiscing placerat lorem turpis at. Aliquet lorem porttitor interdum. Amet lacus. Aliquam lobortis faucibus blandit ac phasellus. In amet magna non interdum volutpat porttitor metus a ante ac neque. Nisi turpis. Commodo col. Interdum adipiscing mollis ut aliquam id ante adipiscing commodo integer arcu amet blandit adipiscing arcu ante.</p>
+					<section class = "special">
+						<a class="image "><img src="images/depth/test_setup.png" /></a>
+					</section>
+
+				</br>
+					
+
+					<h3>Introduction</h3>
+					<p>
+						The end goal of this project was to be able to create a system where object distance could be easily and accurately determined. In placing an object in front of the camera, the system should be able to use the camera’s varying focus measures in order to determine the distance the object was from the camera. In order to do this, <strong>we found the relationship between an object’s distance from the camera and the focus index the camera uses to give a focused image </strong>. With this relationship, we were able to come to an equation that related the two measures and use that create a system that would approximate an object’s distance from the camera. The potential users of a depth-measuring system are diverse and could be anything from an ophthalmologist measuring the shape of an eyeball to an industrial robot on an assembly line.   
+					</p>
+
+					<h3>Implementation</h3>
+
+						<p>
+							There were two main stages in our project. The first stage was the camera calibration stage where we took measurements to associate a focus index from the camera with an object distance. With this information we would form a calibration curve that was to be used in the second stage of the project. For the second stage of the project, we placed several objects at various distances in front of the camera, measured the max focus index of the camera, and used the calibration curved developed in the previous stage to approximate the object distance. 
+						</p>
+
+						<section class="special">
+						<div class="box alt">
+								<div class="row 50% uniform">
+									
+									<div class="6u"> 
+										<span class="image fit captioned"><img src="images/depth/calibration_setup.png" alt="" />
+										<h3>Calibration Setup</h3></span>
+									</div>
+
+									<div class="6u"> 
+										<span class="image fit captioned"><img src="images/depth/depth_measurement.png" alt="" />
+										<h3>Depth Measurement System Diagram</h3></span>
+										
+									</div>
+									
+								</div>
+						</div>
+						</section>
+
+
+						<h4>Calibration</h4>
+
+						<p>
+							The object of this stage was to experiment with different focus measures, construct a calibration curve that associated object distances with focus indices, and choose the most accurate curve to use in the following stage. We constructed a test setup where we placed the camera on a mount and in front of a black and white checkered board. The camera was connected to our laptop where the images were sent and processed. We developed a MATLAB script that changed the focus indices on the camera and stored the images for analysis. The script then used one of the given focus measures and calculated which focus index gave the most-focused image. The focus index was recorded and along with the distance the object was from the camera. This process was repeated for several different focus measures and a few calibration curve were developed. 
+
+						</p>
+
+
+
+
+					
+
+						<h4>Determining Object Distance</h4>
+
+						<p>
+							In the calibration stage described above, the squared gradient focus measure was determined to be the focus measure with the best precision. In this stage, we used the calibration curve to determine the distance that an object is from the camera. The setup for this stage was very similar to that of the previous section. Objects were placed in front of the camera. The same script that was used in the previous stage was used here. The camera frame was seen on the computer screen and the user cropped the object that was going to be tested. The image was converted to gray scale in order to perform the focus measure operations. The script used the given focus measure, in this case the squared gradient, to calculate the focus index that put the object best in focus. The script then used the equation produced by the squared gradient calibration curve to calculate the approximate distance that the object was from the camera lens. 
+
+						</p>
+
+						
+
+						</br>
+
+						<h3>Results</h3>
+						<p>
+
+							The final depth measurement system was tested with different types of objects of varying texture, size, shape, and color. Three of the objects used included a dark book, a dumbbell, and a “Winnie the Pooh” stuffed animal. The three objects are shown below. 
+
+						</p>
+
+
+						<section class="special">
+						<div class="box alt">
+								<div class="row 50% uniform">
+									
+									<div class="4u"> 
+										<span class="image fit captioned"><img src="images/depth/book.png" alt="" />
+										<h3 class="centerboxs">Book Test: 3% Error </br></br></h3></span>
+									</div>
+
+									<div class="4u"> 
+										<span class="image fit captioned"><img src="images/depth/dumbbell.png" alt="" />
+										<h3>Dumbbell Test: 18% Error </br></br></h3></span>
+										
+									</div>
+
+									<div class="4u$">
+										<span class="image fit captioned"><img src="images/depth/pooh.png" alt="" /><h3>Pooh's Shirt Test: 18% Error </br> Pooh's Face Test: 11% Error </h3></span>
+									</div>
+									
+								</div>
+							</div>
+						</section>
+
+						<p>
+
+							After testing all three objects at varying distances, the book only produced a 3% error and the dumbbell yielded an 18% error. The “Pooh” doll was tested in two ways. In the first test, the bounded box was outlined to “Pooh’s” shirt and that produced an error of 8%. Afterwards, the camera became focused on his face. This test produced an error of 11%.
+
+						</p>
+
+						
+
+
+
+
+
+					<!--Return Button-->
+					<section class="returnbutton wrapper special">
+
+					<ul class=" actions">
+							<li><a href="index.html#projects" class="button special big">Back to Projects</a></li>
+					</ul></section>
+					
+
+
 
 				</div>
 			</section>
@@ -53,14 +164,14 @@
 			<footer id="footer">
 				<div class="container">
 					<ul class="icons">
-						<li><a href="#" class="icon fa-facebook"></a></li>
-						<li><a href="#" class="icon fa-twitter"></a></li>
-						<li><a href="#" class="icon fa-instagram"></a></li>
+						
+						<li><a href="https://www.linkedin.com/pub/cristian-bedoya/49/515/243" class="icon fa-linkedin"></a></li>
+						<li><a href="https://www.youtube.com/user/CBEDOYA1084" class="icon fa-youtube"></a></li>
 					</ul>
 					<ul class="copyright">
-						<li>&copy; Untitled</li>
-						<li>Design: <a href="http://templated.co">TEMPLATED</a></li>
-						<li>Images: <a href="http://unsplash.com">Unsplash</a></li>
+						<li>&copy; 2015 Cristian Bedoya</li>
+						<li>Written over some hot Intelligentsia Coffee</li>
+						
 					</ul>
 				</div>
 			</footer>
