@@ -125,7 +125,7 @@
                     if (percent_val >= final_val) {
                         clearInterval(interval);
                     }
-                }, 20)
+                }, 10)
             }
 
 
