@@ -2,10 +2,12 @@
 
 <html>
 	<head>
-		<title>Projects - Kegrig Automated Cocktail Mixer</title>
+		<title>Projects - 8-Bit Processor in Virtuoso</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
+
+		<link rel="icon" href="images/favicon.ico">
 		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
 		<script src="js/jquery.min.js"></script>
 		<script src="js/skel.min.js"></script>
@@ -37,14 +39,90 @@
 				<div class="container">
 
 					<header class="major special">
-						<h2>Kegrig</h2>
-						<p>Automated Cocktail Mixer</p>
+						<h2>8-bit Processor in Virtuoso</h2>
+						<p>VLSI Design Project</p>
 					</header>
 
-					<iframe class= "image fit" width="560" height="315" src="https://www.youtube.com/embed/k95nEPHHswk" frameborder="0" allowfullscreen></iframe>
-					<p>Vis accumsan feugiat adipiscing nisl amet adipiscing accumsan blandit accumsan sapien blandit ac amet faucibus aliquet placerat commodo. Interdum ante aliquet commodo accumsan vis phasellus adipiscing. Ornare a in lacinia. Vestibulum accumsan ac metus massa tempor. Accumsan in lacinia ornare massa amet. Ac interdum ac non praesent. Cubilia lacinia interdum massa faucibus blandit nullam. Accumsan phasellus nunc integer. Accumsan euismod nunc adipiscing lacinia erat ut sit. Arcu amet. Id massa aliquet arcu accumsan lorem amet accumsan.</p>
-					<p>Amet nibh adipiscing adipiscing. Commodo ante vis placerat interdum massa massa primis. Tempus condimentum tempus non ac varius cubilia adipiscing placerat lorem turpis at. Aliquet lorem porttitor interdum. Amet lacus. Aliquam lobortis faucibus blandit ac phasellus. In amet magna non interdum volutpat porttitor metus a ante ac neque. Nisi turpis. Commodo col. Interdum adipiscing mollis ut aliquam id ante adipiscing commodo integer arcu amet Ac interdum ac non praesent. Cubilia lacinia interdum massa faucibus blandit nullam. Accumsan phasellus nunc integer. Accumsan euismod nunc adipiscing lacinia erat ut sit. Arcu amet. Id massa aliquet arcu accumsan lorem amet accumsan commodo odio cubilia ac eu interdum placerat placerat arcu commodo lobortis adipiscing semper ornare pellentesque.</p>
-					<p>Amet nibh adipiscing adipiscing. Commodo ante vis placerat interdum massa massa primis. Tempus condimentum tempus non ac varius cubilia adipiscing placerat lorem turpis at. Aliquet lorem porttitor interdum. Amet lacus. Aliquam lobortis faucibus blandit ac phasellus. In amet magna non interdum volutpat porttitor metus a ante ac neque. Nisi turpis. Commodo col. Interdum adipiscing mollis ut aliquam id ante adipiscing commodo integer arcu amet blandit adipiscing arcu ante.</p>
+
+					<h3>Introduction</h3>
+					<p>
+						 In our introductory VLSI course, I worked with a classmate to design and implement a 4-bit ALU on the transistor level using Cadence Virtuoso software. At the end of the class, we realized that the ALU could be extended to a full processor. With both of us having some background in computer architecture, we decided to take on the task of designing our own single cycle processor using VLSI. We set up an instruction set architecture, designed the circuitry, and implemented it in layout. We were able to test our processor with a small set of instructions and were able to achieve positive results. 
+  
+					</p>
+
+					<section class = "special">
+						<span class="image fit captioned"><img src="images/8bit/schematic.png" /><h3>Full Schematic of 8-bit Processor</h3></span>
+					</section>
+
+
+
+					<h3>Design Approach</h3>
+
+						<p>
+							The task of building a processor from the transistor-level is split into multiple parts. First and foremost, we simplified the problem to something more feasible yet realistic, by restricting the possible instructions that could be executed on this processor. We chose the following set of instructions: LOAD, STORE, ADD, SUBTRACT, AND, OR, and XOR. Once we identified our instructions, we determined the possible hardware required to fetch, decode, and execute instructions. We needed the instruction memory to store and output instructions; control unit to decode the instruction and activate the right components; ALU to execute tasks; data memory to initially hold the data and store any new data; and a register file to hold temporary data.
+						</p>
+
+						<h4>Grid System</h4>
+						<p>
+							A major design choice we made was to incorporate the grid system. In this approach, we consciously used metal layer 2 for horizontal connections, and metal layer 3 for vertical connections for every component that is not at the top level. In this way, we were able to fit a maximum of six parallel metal 2 wires in each component, without any LVS errors. Below is a closeup of our full adder layout showing the use of our grid system to make connections. To allow six parallel metal 2 wires, we meticulously measured the height required for them and slightly increased the pitch of each cell to accommodate them. In the top level design however, we changed the orientations of cells to minimize the area impact as much as possible. We had no choice but to use metal layers 4 and 5 to interconnect the cells. Here, we consciously tried to use metal 4 for vertical connections and metal 5 for horizontal connections. Inevitably, we had to use metal 6 for VDD and GND connections. 
+
+						</p>
+
+						<section class = "special">
+						<span class="image fit captioned"><img src="images/8bit/grid.png" />
+							<h3>Example of Grid System Approach</h3>
+						</span>
+						</section>
+
+						<h3>Layout</h3>
+						<p>
+							The final layout for our 8-bit single cycle processor is shown below. The layout is shown in two forms. The first depicts the design showing all the metal layers used and the other shows the general placement of each module in the final design. 
+
+						</p>
+						
+						<section class = "special">
+						<span class="image fit captioned"><img src="images/8bit/layoutfull.png" />
+							<h3>Layout showing all metal layers</h3>
+						</span>
+						</section>
+
+						<section class = "special">
+						<span class="image fit captioned"><img src="images/8bit/layoutblock.png" />
+							<h3>Layout showing placement of modules</h3>
+						</span>
+						</section>
+
+						<h3>Testing and Results</h3>
+
+						<h4>Functionality of Processor</h4>
+
+						<p>
+							We first needed to make certain that the processor performed the correct logic and gave the correct output when given a set of instructions. We tested this out with the schematic and made sure our design passed this test before working on any of the layout. Since there was a small amount of instructions, it was easy enough to perform the logic and arithmetic operations by hand and then check the processor’s output against our own calculations. After checking these signals with our own calculations, we were able to conclude that the processor was storing the correct data in the proper place without any timing issues. Thus, our processor proved to be fully functional. 
+						</p>
+
+						<h4>Layout Matches the Schematic Without any timing errors</h4>
+
+						<p>
+						The LVS tool in Cadence checks to see if all the proper components and connections are made on the layout (specified in the schematic). However, possible timing issues could arrive when working on the physical layout. Thus, it was necessary to check the extracted layout simulation and check it against the schematic simulations discussed above. the extracted layout simulation matched the schematic simulation with almost no discrepancies. Each signal changed at the correct time and changed fast enough ensuring that the system was working correctly within the layout. Since the extracted layout simulation matched the schematic simulation, it also matches the hand calculations we performed beforehand. Thus, it can be noted that the processor layout correctly functions as it should. 
+						</p>
+
+						<h3>Future Works</h3>
+
+						<p>
+							Our implementation used a subset of MIPS instructions, using only 8 bits for computation. The full MIPS instruction set uses instructions such as branches, jumps, computations with immediates, etc. This is a possible extension of our project. If possible, we would like to manufacture this processor using real hardware. This would provide us with a comparison between how well Cadence simulates its layout in comparison to real hardware.
+						</p>
+						
+
+						
+
+					<section class="returnbutton wrapper special">
+
+					<ul class=" actions">
+							<li><a href="index.html#projects" class="button special big">Back to Projects</a></li>
+					</ul></section>
+					
+
+
 
 				</div>
 			</section>
@@ -53,14 +131,14 @@
 			<footer id="footer">
 				<div class="container">
 					<ul class="icons">
-						<li><a href="#" class="icon fa-facebook"></a></li>
-						<li><a href="#" class="icon fa-twitter"></a></li>
-						<li><a href="#" class="icon fa-instagram"></a></li>
+						
+						<li><a href="https://www.linkedin.com/pub/cristian-bedoya/49/515/243" class="icon fa-linkedin"></a></li>
+						<li><a href="https://www.youtube.com/user/CBEDOYA1084" class="icon fa-youtube"></a></li>
 					</ul>
 					<ul class="copyright">
-						<li>&copy; Untitled</li>
-						<li>Design: <a href="http://templated.co">TEMPLATED</a></li>
-						<li>Images: <a href="http://unsplash.com">Unsplash</a></li>
+						<li>&copy; 2015 Cristian Bedoya</li>
+						<li>Written over some hot Intelligentsia Coffee</li>
+						
 					</ul>
 				</div>
 			</footer>
